@@ -1,8 +1,8 @@
-import random
 import discord
-import yaml
 from discord.ext import commands
 
-Client = discord.Client()
-client = commands.Bot(command_prefix = "!")
+intents = discord.Intents.default()
+intents.message_content = True
+Client = discord.Client(intents=intents)
+client = commands.Bot(command_prefix="!", intents=intents)
 client.remove_command('help')
